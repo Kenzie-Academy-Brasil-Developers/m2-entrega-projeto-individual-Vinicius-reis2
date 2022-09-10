@@ -50,15 +50,20 @@ export class Api{
         })
         .then(resp => resp.json())
         .then(resp => {
-            if(resp === 200){
+            if(!resp.error){
                 localStorage.setItem("@KenzieEmpresas:token",resp.token)
                 localStorage.setItem("@KenzieEmpresas:uuid",resp.uuid)
                 localStorage.setItem("@KenzieEmpresas:is_admin",resp.is_admin)
-                Modals.modalOkLogin("Usuario valido")
+                Modals.modalOkLogin("Usuario validado")
+
+                if(localStorage.getItem("@KenzieEmpresas:is_admin") === "true"){
+                    console.log("admin")
+                }else{
+                    console.log("usuario normal")
+                }
             }else{
                 Modals.modalError(resp.error)
             }
-            
         })
 
         return response
