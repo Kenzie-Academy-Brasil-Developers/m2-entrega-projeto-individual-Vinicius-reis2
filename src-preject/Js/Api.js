@@ -57,9 +57,9 @@ export class Api{
                 Modals.modalOkLogin("Usuario validado")
 
                 if(localStorage.getItem("@KenzieEmpresas:is_admin") === "true"){
-                    console.log("admin")
+                    window.location.assign("./src-preject/html/adminpage.html")
                 }else{
-                    console.log("usuario normal")
+                    window.location.assign("../../src-preject/html/userpage.html")
                 }
             }else{
                 Modals.modalError(resp.error)

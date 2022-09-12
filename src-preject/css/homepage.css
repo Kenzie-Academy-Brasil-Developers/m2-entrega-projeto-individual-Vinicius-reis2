@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+header{
+    width: 100vw;
+    height: 50px;
+    background: var(--primary-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+header h1{
+    font-size: 1.4rem;
+    font-family: var(--font-title);
+    color: var(--white-title);
+    font-weight: 400;
+}
+
+header button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+header img{
+    width: 24px;
+    margin-top: 5px;
+}
+
+body{
+    background: var(--white-title);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    width: 90vw;
+}
+
+.containerSectors{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main h2{
+    font-family: var(--font-title);
+    color: var(--primary-bg);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.companiesSectors{
+    margin-top: 1.2rem;
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.companiesSectorsLi{
+    padding: .4rem;
+    border: var(--primary-bg) 1px solid;
+    border-radius: 12px;
+    transition: .4s;
+}
+
+.companiesSectorsLi:hover{
+    background-color: var(--primary-bg);
+    color: var(--white-title);
+    transition: .4s;
+}
+
+/* REGISTRAR EMPRESA */
+
+.containerCompanies{
+    margin-top: 2rem;
+    width: 100%;
+    height: 400px;
+}
+
+.registerCompanies{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerCompanies form{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerCompanies input{
+    margin-top: 1rem;
+    padding: .8rem;
+    width: 85%;
+    border-radius: 12px;
+    border: none;
+}
+
+.registerCompanies select{
+    margin-top: 1rem;
+    padding: .8rem;
+    width: 89%;
+    border-radius: 12px;
+    border: none;
+}
+
+.registerCompanies button{
+    margin-top: 1rem;
+    width: fit-content;
+    padding: .8rem 2rem;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--primary-bg);
+    color: var(--white-title);
+    font-weight: 600;
+    border-radius: 8px;
+    font-family: var(--font-title);
+}
+
+/* LISTAR MINHAS EMPRESAS */
+
+.myCompanies{
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.myCompanies ul{
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.myCompaniesLi{
+    padding: .6rem;
+}
+
+.CompanieName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myCompaniesLi{
+    background: var(--primary-bg);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-top: .8rem;
+}
+
+.myCompaniesLi h3{
+    font-size: 1.2rem;
+    color: var(--white-title);
+}
+
+.myCompaniesLi span{
+    font-size: .7rem;
+    padding: .3rem;
+    border: 1px solid var(--second-bg);
+    background: var(--second-bg);
+    border-radius: 8px;
+    color: var(--white-sub);
+}
+
+.myCompaniesLi p{
+    font-size: .9rem;
+    color: var(--white-sub);
+    margin-top: .6rem;
+}
+
+.myCompaniesLi small{
+    font-size: .8rem;
+    margin-top: .6rem;
+    color: var(--white-sub);
+}
+
+.searchCompany{
+    width: 100%;
+    margin-top: 280px;
+}
+
+.formSearchCompany{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formSearchCompany input{
+    margin-top: 1rem;
+    padding: .8rem;
+    width: 50%;
+    border-radius: 12px;
+    border: none;
+}
+
+.formSearchCompany button{
+    margin-top: 18px;
+    border: none;
+    width: 30px;
+    height: 35px;
+    cursor: pointer;
+    background: none;
+}
+
+.formSearchCompany img{
+    width: 20px;
+}
+
+.containerDepartments{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.createDepartment{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+}
+
+.createDepartment form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.createDepartment input{
+    margin-top: 1rem;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+}
+
+.createDepartment select{
+    margin-top: 1rem;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+}
+
+.createDepartment button{
+    margin-top: 1rem;
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--primary-bg);
+    color: var(--white-title);
+    font-weight: 600;
+    border-radius: 8px;
+    font-family: var(--font-title);
+}
+
+.containerDepartments h3{
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    color: var(--primary-bg);
+    font-weight: 500;
+}
+
+.listDepartments{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.listDepartments form{
+    display: flex;
+    flex-direction: column;
+}
+
+.listDepartments select{
+    margin-top: 1rem;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+}
+
+.listDepartments button{
+    margin-top: 1rem;
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--primary-bg);
+    color: var(--white-title);
+    font-weight: 600;
+    border-radius: 8px;
+    font-family: var(--font-title);
+}
+
+.listDepartmentsUl{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 200px;
+    overflow-y: scroll;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.listDepartmentsUlLi{
+    width: 18%;
+    height: fit-content;
+    padding: .4rem 1.6rem;
+    border-radius: 8px;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--primary-bg);
+}
+
+.listDepartmentsUlLi h3{
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--white-title);
+}
+
+.listDepartmentsUlLi p{
+    margin-top: .4rem;
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--white-sub);
+}
+
+.SectionUsers{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.SectionUsers h3{
+    font-size: 1.3rem;
+}
+
+.SectionUsers ul{
+    width: 100%;
+    margin-top: 1.8rem;
+    height: 300px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.SectionUsers div{
+    display: flex;
+    flex-direction: column;
+}
+
+.SectionUsers li{
+    margin-top: 1rem;
+    padding: .6rem;
+    border-radius: 8px;
+    width: 85%;
+    background: var(--primary-bg);
+}
+
+.SectionUsers h4{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--white-title);
+}
+
+.SectionUsers p{
+    margin-top: .6rem;
+    font-size: .8rem;
+    color: var(--white-sub);
+}
+
+.SectionUsers small{
+    margin-top: .6rem;
+    font-size: .8rem;
+    color: var(--white-sub);
+}
+
+.SectionUsers h5{
+    text-align: center;
+    align-items: center;
+    margin: auto auto;
+    padding: 1rem 2rem;
+    color: var(--white-title);
+    border-radius: 8px;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--second-bg);
+}
+
+.mainUser{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainUser h2{
+    padding: 1rem 2rem;
+    color: var(--white-title);
+    border: 1px solid var(--primary-bg);
+    background: var(--primary-bg);
+    border-radius: 8px;
+}
+@media (min-width: 768px){
+
+    .containerCompanies{
+        display: flex;
+    }
+    
+    .myCompanies{
+        margin-top: 0rem;
+    }
+
+    .searchCompany{
+        margin-top: -2.6rem;
+    }
+
+    .SectionUsers div{
+        flex-direction: row;
+    }
+}
