@@ -22,7 +22,7 @@ export class Modals{
           position: "left",
           stopOnFocus: true,
           style: {
-            background: "linear-gradient(to right, #00C400, #141a2e)"
+            background: "linear-gradient(to right, #00C400, #00C400)"
           },
         }).showToast();
   }

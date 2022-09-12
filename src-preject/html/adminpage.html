@@ -6,11 +6,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/">
+    <link rel="stylesheet" href=".././css/homepage.css">
 
-    <script type="module" defer src="../Js/Api.js"></script>
+    <script type="module" defer src=".././Js/ApiAdmin.js"></script>
+    <script type="module" defer src=".././Js/renderSectors.js"></script>
+    <script type="module" defer src="../Js/registerCompany.js"></script>
+    <script type="module" defer src=".././Js/searchCompany.js"></script>
+    <script type="module" defer src=".././Js/departments.js"></script>
+    <script type="module" defer src="./../Js/toastify.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     
     <title>Document</title>
+
+    <header>
+        <h1>Admin Dashboard</h1>
+        <button><img src="../imgs/pngwing.com (7).png" alt=""></button>
+    </header>
+
+    <main class="container">
+
+        <section class="containerSectors">
+            <h2>Setores</h2>
+            <ul class="companiesSectors">
+                <!-- <li class="companiesSectorsLi">aa</li> -->
+            </ul>
+        </section>
+
+        <section class="containerCompanies">
+            <article class="registerCompanies">
+                <h2>registrar empresas</h2>
+                <form>
+                    <input type="text" required placeholder="Nome da empresa">
+                    <input type="text" required placeholder="Horario de abertura">
+                    <input type="text" required placeholder="descrição da empresa">
+                    <select>
+                        <option value="">Selecione um setor...</option>
+                        <option value="c2199697-f74a-43b3-af6c-5eb4ad638340">Alimenticio</option>
+                        <option value="2c080ef7-e951-4328-a739-10b94e465c60">Varejo</option>
+                        <option value="043a992e-3b70-4ccf-9ba3-bd52cebbdd19">Textil</option>
+                        <option value="ef10aea4-e40e-4f94-bccb-be062c36d04e">Manufatura</option>
+                        <option value="48e90644-b56e-4010-be05-60f7cc7355c0">AeroEspacial</option>
+                        <option value="f12acecd-c748-42b9-a602-01182c9c2060">Automotiva</option>
+                        <option value="1f6762b3-d330-4959-bfe5-9c20d8726d38">T.i</option>
+                        <option value="09fb1961-caec-485f-a5c1-eed9dcd44aef">Atacado</option>
+                    </select>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </article>
+
+            <article class="myCompanies">
+                <ul>
+                    <h2>Minhas empresas</h2>
+                    <!-- <li class="myCompaniesLi">
+                        <div class="CompanieName">
+                            <h3>nome da empresa</h3>
+                            <span>categoria</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur laudantium dicta tempora</p>
+                        <small>Abre as : 09:00</small>
+                    </li> -->
+                </ul>
+            </article>
+        </section>
+
+        <section class="searchCompany">
+            <h2>Procurar uma empresa</h2>
+            <form class="formSearchCompany">
+                <input type="text" placeholder="Procurar empresa">
+                <button><img src="../imgs/pngwing.com (6).png" alt=""></button>
+            </form>
+            <ul>
+                
+            </ul>
+        </section>
+
+        <section class="containerDepartments">
+            <h2>Sessão de departamentos</h2>
+            <div class="createDepartment">
+                <h3>Criar departamento</h3>
+                <form action="">
+                    <input type="text" placeholder="Nome do departamento">
+                    <input type="text" placeholder="descrição do departamento">
+                    <select name="" id="selectDepartments">
+                        <option value="">Selecione a empresa...</option>    
+                    </select>
+                    <button>Criar</button>
+                </form>
+            </div>
+            <div class="listDepartments">
+                <h3>listar departamento</h3>
+                <form>
+                    <select id="selectDepartmentsList">
+                        <option value="">Selecione a empresa...</option>
+                    </select>
+                    <button type="submit">Selecionar</button>
+                </form>
+                <ul class="listDepartmentsUl">
+
+                </ul>
+            </div>
+        </section>
+
+        <section class="SectionUsers">
+            <h2>Usuarios cadastrados</h2>
+                <div>
+                <ul class="SectionUsersEmp">
+                    <h3>Empregados</h3>
+                    <h5>Nenhum Usuário Empregado</h5>
+                </ul>
+                <ul class="SectionUsersEmp" id="ulDesemp">
+                    <h3>Desempregados</h3>
+                </ul>
+            </div>
+        </section>
+    </main>
 </head>
 <body>
     
