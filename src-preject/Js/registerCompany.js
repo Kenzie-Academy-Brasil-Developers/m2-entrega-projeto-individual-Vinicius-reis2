@@ -4,8 +4,7 @@ export class registerCompany{
     static async registerNewCompany(){
         const buttonSend = document.querySelector(".registerCompanies button")
         buttonSend.addEventListener("click", async (e) => {
-            e.preventDefault()
-            console.log(e)
+            e.preventDefault();
             const input = document.querySelectorAll("input")
             const select = document.querySelectorAll("select")
 
