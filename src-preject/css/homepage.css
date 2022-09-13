@@ -274,7 +274,7 @@ main h2{
 
 .listDepartments form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .listDepartments select{
@@ -299,17 +299,18 @@ main h2{
 
 .listDepartmentsUl{
     display: flex;
-    flex-wrap: wrap;
-    max-height: 200px;
+    max-height: 250px;
     overflow-y: scroll;
-    gap: 1rem;
+    gap: 1.3rem;
     margin-top: 2rem;
+    
 }
 
 .listDepartmentsUlLi{
-    width: 18%;
-    height: fit-content;
-    padding: .4rem 1.6rem;
+    transition: 2s;
+    width: fit-content;
+    height: 82px;
+    padding: 1rem 1.6rem .4rem 1rem;
     border-radius: 8px;
     background-color: var(--primary-bg);
     border: 1px solid var(--primary-bg);
@@ -326,6 +327,33 @@ main h2{
     font-size: .9rem;
     font-weight: 600;
     color: var(--white-sub);
+}
+
+.formSearchDepartment{
+    width: 100%;
+}
+
+.formSearchDepartment input{
+    margin-top: 1rem;
+    padding: 0.8rem;
+    width: 100%;
+    height: 24px;
+    border-radius: 12px;
+    border: none;
+}
+
+.formSearchDepartment input{
+    max-width: 50%;
+}
+
+.formSearchDepartment button{
+    padding: .6rem;
+    background: none;
+    border: none;
+}
+
+.formSearchDepartment img{
+    width: 20px;
 }
 
 .SectionUsers{

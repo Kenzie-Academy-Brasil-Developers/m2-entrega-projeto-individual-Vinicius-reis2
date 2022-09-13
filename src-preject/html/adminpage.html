@@ -14,6 +14,7 @@
     <script type="module" defer src=".././Js/searchCompany.js"></script>
     <script type="module" defer src=".././Js/departments.js"></script>
     <script type="module" defer src="./../Js/toastify.js"></script>
+    <script type="module" defer src="../Js/employees.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
@@ -28,7 +29,7 @@
     <main class="container">
 
         <section class="containerSectors">
-            <h2>Setores</h2>
+            <h2>Listagem de Setores</h2>
             <ul class="companiesSectors">
                 <!-- <li class="companiesSectorsLi">aa</li> -->
             </ul>
@@ -39,7 +40,7 @@
                 <h2>registrar empresas</h2>
                 <form>
                     <input type="text" required placeholder="Nome da empresa">
-                    <input type="text" required placeholder="Horario de abertura">
+                    <input type="time" required placeholder="Horario de abertura">
                     <input type="text" required placeholder="descrição da empresa">
                     <select>
                         <option value="">Selecione um setor...</option>
@@ -52,7 +53,7 @@
                         <option value="1f6762b3-d330-4959-bfe5-9c20d8726d38">T.i</option>
                         <option value="09fb1961-caec-485f-a5c1-eed9dcd44aef">Atacado</option>
                     </select>
-                    <button type="submit">Cadastrar</button>
+                    <button>Cadastrar</button>
                 </form>
             </article>
 
@@ -99,9 +100,13 @@
                 <h3>listar departamento</h3>
                 <form>
                     <select id="selectDepartmentsList">
-                        <option value="">Selecione a empresa...</option>
+                        <option value="">Todas os departamentos...</option>
                     </select>
                     <button type="submit">Selecionar</button>
+                </form>
+                <form class="formSearchDepartment">
+                    <input type="text" placeholder="Procurar departamento">
+                    <button><img src=".././imgs/pngwing.com (6).png" alt=""></button>
                 </form>
                 <ul class="listDepartmentsUl">
 
@@ -114,10 +119,34 @@
                 <div>
                 <ul class="SectionUsersEmp">
                     <h3>Empregados</h3>
-                    <h5>Nenhum Usuário Empregado</h5>
                 </ul>
                 <ul class="SectionUsersEmp" id="ulDesemp">
                     <h3>Desempregados</h3>
+                </ul>
+            </div>
+        </section>
+
+        <section class="containerEmp">
+            <h2>Funcionarios</h2>
+            <div>
+                <h3>Contratar</h3>
+                <form class="conEmp">
+                    <select id="departSelect"></select>
+                    <select id="userSelect"></select>
+                    <button type="submit">Contratar</button>
+                </form>
+                <ul class="">
+
+                </ul>
+            </div>
+            <div>
+                <h3>Demitir</h3>
+                <form class="demisEmp">
+                    <select id="userSelectDem"></select>
+                    <button type="submit">Demitir</button>
+                </form>
+                <ul>
+                    
                 </ul>
             </div>
         </section>

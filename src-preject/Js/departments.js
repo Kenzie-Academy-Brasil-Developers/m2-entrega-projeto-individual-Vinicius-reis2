@@ -22,7 +22,7 @@ export class Departments{
             const data = {
                 name: input[4].value,
                 description: input[5].value,
-                company_uuid: select.value
+                company_uuid: select.value  
             }
 
             ApiAdmin.createDepartments(data)
@@ -49,6 +49,45 @@ export class Departments{
         })
     }
 
+    static async SearchDepartments(data){
+        const button = document.querySelector(".formSearchDepartment button")
+        button.addEventListener("click", (e) => {
+            e.preventDefault()
+            const input = document.querySelector(".formSearchDepartment input")
+            
+            const inputValue = input.value
+
+            const newFilter = data.filter((e) => {
+                return inputValue.toLowerCase().includes(e.name.toLowerCase())
+            })
+
+            Departments.RenderSelectedDepartment(newFilter)
+        })
+    }
+
+    static async RenderSelectedDepartment(data){
+        
+        const tagUl = document.querySelector(".listDepartmentsUl")
+        tagUl.innerHTML = ""
+
+        data.forEach((e) => {
+            const tagLi = document.createElement("li")
+            tagLi.setAttribute("class", "listDepartmentsUlLi")
+
+            const tagH3Name = document.createElement("h3")
+            tagH3Name.innerText = `Empresa: ${e.companies.name}`
+
+            const tagH3 = document.createElement("h3")
+            tagH3.innerText = `Departamento: ${e.name}`
+
+            const tagP = document.createElement("p")
+            tagP.innerHTML =`Descrição: ${e.description}`
+
+            tagLi.append(tagH3Name, tagH3, tagP)
+            tagUl.append(tagLi)
+        })
+    }
+
     static async RegistredUsers(data){
         data.forEach((e) =>{
             const tagUl = document.querySelector(".SectionUsersEmp")
@@ -67,10 +106,12 @@ export class Departments{
             const tagSmall = document.createElement("small")
             tagSmall.innerText = `nivel: ${e.professional_level}`
 
+            const tagSpan = document.createElement("span")
+            tagSpan.innerText = e.department_uuid
+
             tagLi.append(tagH4, tagP, tagSmall)
 
             if(e.department_uuid != null){
-                tagUl.innerHTML = ""
                 if(e.is_admin != true){
                     tagUl.append(tagLi)
                 }

@@ -1,8 +1,21 @@
 import { Departments } from "./departments.js"
+import { Employees } from "./employees.js"
 import { renderSectors } from "./renderSectors.js"
 import { companySearch } from "./searchCompany.js"
 import { Modals } from "./toastify.js"
 
+
+class CheckTooken{
+    static async CheckTooken(){
+        if(!localStorage.getItem("@KenzieEmpresas:token")){
+            setInterval((e) => {
+                window.location.replace("../../index.html")
+            }, 1)
+        }
+    }
+}
+
+CheckTooken.CheckTooken()
 
 export class ApiAdmin{
 
@@ -82,17 +95,23 @@ export class ApiAdmin{
         })
         .then(resp => resp.json())
         .then(resp => {
-            Modals.modalOkLogin("Departamentos listados")
+            Employees.listdepartments(resp)
+            if(resp.length <= 0 ){
+                Modals.modalError("Nenhum departamento encontrado para está empresa")
+            }else{
+                Modals.modalOkLogin("Departamentos listados")
+            }
+            console.log(resp)
             const tagUl = document.querySelector(".listDepartments ul")
             tagUl.innerHTML = "";
             resp.forEach((e) => {
                 const tagLi = document.createElement("li")
                 tagLi.setAttribute("class", "listDepartmentsUlLi")
                 const tagH3 = document.createElement("h3")
-                tagH3.innerText = e.name;
-
+                tagH3.innerText = `Departamento:   ${e.name}`
+                
                 const tagP = document.createElement("p")
-                tagP.innerText = e.description;
+                tagP.innerText = `descripition: ${e.description}`
 
                 tagLi.append(tagH3, tagP);
                 tagUl.append(tagLi)
@@ -108,7 +127,11 @@ export class ApiAdmin{
             headers: this.Header
         })
         .then(resp => resp.json())
-        .then(resp => Departments.RegistredUsers(resp))
+        .then(resp => {
+            Departments.RegistredUsers(resp)
+            Employees.ListUser(resp)
+            Employees.DemissEmployee(resp)
+        })
 
         return response
     }
@@ -121,10 +144,68 @@ export class ApiAdmin{
             window.location.assign("../../index.html")
         })
     }
+
+    static async CallDepartments(){
+        const response = await fetch(`${this.BaseUrl}departments/`,{
+            method: 'GET',
+            headers: this.Header
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            Departments.SearchDepartments(resp)
+        })
+
+        return response
+    }
+
+    static async ListDepartmentsEmployees(){
+        const response = await fetch(`${this.BaseUrl}departments/`,{
+            method: 'GET',
+            headers: this.Header
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            Employees.listdepartments(resp)
+        })
+
+        return response
+    }
+
+    static async ContEmployees(data){
+        const response = await fetch(`${this.BaseUrl}departments/hire/`,{
+            method: 'PATCH',
+            headers: this.Header,
+            body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            if(!resp.error){
+                Modals.modalOkLogin("Usuário contratado")
+            }else{
+                Modals.modalError("Funcionario ja está contratado")
+            }
+        })
+        .then(err => err)
+
+        return response
+    }
+
+    static async DemissEmployee(data){
+        const response = await fetch(`${this.BaseUrl}departments/dismiss/${data}`,{
+            method: 'PATCH',
+            headers: this.Header
+        })
+        .then(resp => resp.json())
+        .then(resp => {Modals.modalOkLogin("Usuario demitido")})
+
+        return response
+    }
 }
 
 await ApiAdmin.getSectors()
 await ApiAdmin.getCompanies()
 await ApiAdmin.CallUsers()
 ApiAdmin.ButtonExit()
+ApiAdmin.CallDepartments()
+ApiAdmin.ListDepartmentsEmployees()
 
