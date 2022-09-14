@@ -122,4 +122,51 @@ export class Departments{
             }
         })
     }
+
+    static async DeletDerp(data){
+        data.forEach((e) => {
+            const select = document.querySelector(".deletDepartment select")
+
+            const tagOption = document.createElement("option")
+            tagOption.innerText = e.name;
+            tagOption.value = e.uuid;
+
+            select.append(tagOption);
+        })
+
+        const select = document.querySelector(".deletDepartment select")
+        const button = document.querySelector(".deletDepartment button")
+        button.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            const data = select.value
+
+            ApiAdmin.DeletDepartments(data)
+        })
+    }
+
+    static async EditDerp(data){
+        data.forEach((e) => {
+            const select = document.querySelector(".editDepartment select")
+
+            const tagOption = document.createElement("option")
+            tagOption.innerText = e.name
+            tagOption.value = e.uuid
+
+            select.append(tagOption)
+        })
+
+        const button = document.querySelector(".editDepartment button")
+        button.addEventListener("click", (e) => {
+            e.preventDefault()
+            const select = document.querySelector(".editDepartment select")
+            const input = document.querySelector(".editDepartment input")
+
+            const data = {
+                description: input.value
+            }
+
+            ApiAdmin.EditDepartments(data, select.value)
+        })
+    }
 }

@@ -101,7 +101,6 @@ export class ApiAdmin{
             }else{
                 Modals.modalOkLogin("Departamentos listados")
             }
-            console.log(resp)
             const tagUl = document.querySelector(".listDepartments ul")
             tagUl.innerHTML = "";
             resp.forEach((e) => {
@@ -153,8 +152,43 @@ export class ApiAdmin{
         .then(resp => resp.json())
         .then(resp => {
             Departments.SearchDepartments(resp)
+            Departments.DeletDerp(resp)
+            Departments.EditDerp(resp)
         })
 
+        return response
+    }
+
+    static async DeletDepartments(data){
+        const response = await fetch(`${this.BaseUrl}departments/${data}`,{
+            method: 'DELETE',
+            headers: this.Header,
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            if(!resp.error){
+                Modals.modalOkLogin("Departamento apagado")
+            }
+        })
+
+        return response
+    }
+
+    static async EditDepartments(data, uuid){
+        const response = await fetch(`${this.BaseUrl}departments/${uuid}`,{
+            method: 'PATCH',
+            headers: this.Header,
+            body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            if(!resp.error){
+                Modals.modalOkLogin(resp)
+            }else{
+                Modals.modalError(resp.error)
+            }
+        })
+        
         return response
     }
 
@@ -182,7 +216,7 @@ export class ApiAdmin{
             if(!resp.error){
                 Modals.modalOkLogin("Usuário contratado")
             }else{
-                Modals.modalError("Funcionario ja está contratado")
+                Modals.modalError(resp.error)
             }
         })
         .then(err => err)
@@ -196,7 +230,13 @@ export class ApiAdmin{
             headers: this.Header
         })
         .then(resp => resp.json())
-        .then(resp => {Modals.modalOkLogin("Usuario demitido")})
+        .then(resp => {
+            if(!resp.error){
+                Modals.modalOkLogin("Usuario demitido")
+            }else{
+                Modals.modalError(resp.error)
+            }
+        })
 
         return response
     }
