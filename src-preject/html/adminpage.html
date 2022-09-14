@@ -112,6 +112,25 @@
 
                 </ul>
             </div>
+
+            <div class="deletDepartment">
+                <h3>Deletar departamento</h3>
+                <form>
+                    <select name="" id="">
+                    </select>
+                    <button>Deletar</button>
+                </form>
+            </div>
+            <div class="editDepartment">
+                <h3>Editar departamento</h3>
+                <form>
+                    <select name="" id="">
+                        <option>Escolha o departamento</option>
+                    </select>
+                    <input type="text" placeholder="Nova descrição">
+                    <button>Editar</button>
+                </form>
+            </div>
         </section>
 
         <section class="SectionUsers">
@@ -131,18 +150,20 @@
             <div>
                 <h3>Contratar</h3>
                 <form class="conEmp">
-                    <select id="departSelect"></select>
-                    <select id="userSelect"></select>
+                    <select id="departSelect"><option value="">Escolha o departamento...</option></select>
+                    <select id="userSelect"><option value="">Escolha o Usuario...</option></select>
                     <button type="submit">Contratar</button>
                 </form>
                 <ul class="">
-
+                    
                 </ul>
             </div>
             <div>
                 <h3>Demitir</h3>
                 <form class="demisEmp">
-                    <select id="userSelectDem"></select>
+                    <select id="userSelectDem">
+                        <option value="">Escolha o Usuario...</option>
+                    </select>
                     <button type="submit">Demitir</button>
                 </form>
                 <ul>

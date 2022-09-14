@@ -52,6 +52,10 @@ main h2{
     font-weight: 600;
 }
 
+main button{
+    cursor: pointer;
+}
+
 .companiesSectors{
     margin-top: 1.2rem;
     display: flex;
@@ -285,7 +289,56 @@ main h2{
     border: none;
 }
 
+
 .listDepartments button{
+    margin-top: 1rem;
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--primary-bg);
+    color: var(--white-title);
+    font-weight: 600;
+    border-radius: 8px;
+    font-family: var(--font-title);
+}
+
+.deletDepartment select {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+}
+
+.deletDepartment button{
+    margin-top: 1rem;
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--primary-bg);
+    color: var(--white-title);
+    font-weight: 600;
+    border-radius: 8px;
+    font-family: var(--font-title);
+}
+
+.editDepartment select {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    width: 40%;
+    border-radius: 12px;
+    border: none;
+}
+
+.editDepartment input{
+    margin-top: 1rem;
+    padding: 0.8rem;
+    width: 40%;
+    border-radius: 12px;
+    border: none;
+}
+
+.editDepartment button{
     margin-top: 1rem;
     width: fit-content;
     padding: 0.8rem 2rem;
@@ -418,6 +471,38 @@ main h2{
     background-color: var(--second-bg);
 }
 
+.containerEmp{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerEmp h3{
+    margin-top: 1rem;
+}
+
+.containerEmp select{
+    width: 50%;
+    padding: .6rem;
+    border-radius: 8px;
+    border: none;
+    margin-top: .6rem;
+}
+
+.containerEmp button{
+    margin-top: 1rem;
+    width: fit-content;
+    padding: .8rem 2rem;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--primary-bg);
+    color: var(--white-title);
+    font-weight: 600;
+    border-radius: 8px;
+    font-family: var(--font-title);
+}
+}
+
 .mainUser{
     height: 80vh;
     display: flex;
@@ -432,6 +517,8 @@ main h2{
     background: var(--primary-bg);
     border-radius: 8px;
 }
+
+
 @media (min-width: 768px){
 
     .containerCompanies{
